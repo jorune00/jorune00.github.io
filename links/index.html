@@ -5,24 +5,145 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Links | jorune.dev</title>
   <style>
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 40px; max-width: 900px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
-    .card { border: 1px solid #ddd; border-radius: 10px; padding: 16px; }
-    a { color: #0a58ca; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    :root {
+      --text: #111;
+      --muted: #555;
+      --border: #ddd;
+      --bg: #fff;
+      --card: #fafafa;
+      --icon: 28px;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      margin: 40px;
+      max-width: 980px;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    h1 { margin: 0 0 16px; }
+    h2 { margin: 32px 0 12px; font-size: 18px; }
+    p { color: var(--muted); margin: 8px 0 0; }
+
+    .icon-row {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 10px 0;
+    }
+
+    .icon-link {
+      width: calc(var(--icon) + 18px);
+      height: calc(var(--icon) + 18px);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      text-decoration: none;
+    }
+
+    .icon-link:hover { background: #f2f2f2; }
+    .icon-link:focus { outline: 3px solid #b3d4ff; outline-offset: 2px; }
+
+    .icon-link svg {
+      width: var(--icon);
+      height: var(--icon);
+      display: block;
+      fill: currentColor;
+    }
+
+    .section-note { margin-top: 6px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 12px;
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      background: var(--card);
+    }
+
+    .card h3 { margin: 0 0 6px; font-size: 16px; }
+
+    .card a {
+      color: #0a58ca;
+      text-decoration: none;
+    }
+
+    .card a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
   <h1>Links</h1>
+
+  <h2>Johnny Heintz contact information</h2>
+  <div class="icon-row" aria-label="Social links">
+    <!-- GitHub -->
+    <a class="icon-link" href="https://github.com/jorune00" target="_blank" rel="noreferrer" aria-label="GitHub">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 .5C5.73.5.75 5.63.75 12c0 5.1 3.29 9.42 7.86 10.95.58.11.79-.26.79-.58v-2.1c-3.2.71-3.87-1.58-3.87-1.58-.52-1.36-1.27-1.72-1.27-1.72-1.04-.73.08-.72.08-.72 1.15.08 1.75 1.2 1.75 1.2 1.02 1.77 2.67 1.26 3.33.97.1-.76.4-1.26.72-1.55-2.55-.3-5.24-1.31-5.24-5.82 0-1.29.45-2.34 1.19-3.17-.12-.3-.52-1.53.11-3.18 0 0 .97-.31 3.18 1.21.92-.26 1.9-.39 2.88-.4.98 0 1.96.14 2.88.4 2.2-1.52 3.17-1.21 3.17-1.21.64 1.65.24 2.88.12 3.18.74.83 1.19 1.88 1.19 3.17 0 4.52-2.7 5.52-5.26 5.81.41.36.78 1.07.78 2.16v3.2c0 .32.21.69.8.58C19.96 21.42 23.25 17.1 23.25 12 23.25 5.63 18.27.5 12 .5Z"/>
+      </svg>
+    </a>
+
+    <!-- LinkedIn -->
+    <a class="icon-link" href="https://www.linkedin.com/in/johnnyheintz/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M20.45 20.45H17v-5.4c0-1.29-.03-2.95-1.8-2.95-1.8 0-2.07 1.4-2.07 2.85v5.5H9.7V9h3.3v1.56h.05c.46-.87 1.58-1.8 3.26-1.8 3.48 0 4.12 2.3 4.12 5.29v6.4ZM5.7 7.5a1.92 1.92 0 1 1 0-3.84 1.92 1.92 0 0 1 0 3.84ZM4 20.45h3.4V9H4v11.45Z"/>
+      </svg>
+    </a>
+
+    <!-- X/Twitter -->
+    <a class="icon-link" href="https://twitter.com/jorune00" target="_blank" rel="noreferrer" aria-label="X (Twitter)">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.6l-5.16-6.7L5.6 22H2.5l7.25-8.3L.8 2h6.76l4.66 6.06L18.9 2Zm-1.16 18h1.72L7.52 3.9H5.67L17.74 20Z"/>
+      </svg>
+    </a>
+
+    <!-- TikTok -->
+    <a class="icon-link" href="https://www.tiktok.com/@jorune00" target="_blank" rel="noreferrer" aria-label="TikTok">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M16.6 2c.25 2.17 1.68 3.95 3.75 4.44v3.27c-1.35.04-2.62-.32-3.75-.98v6.62c0 3.55-2.88 6.43-6.43 6.43S3.75 18.9 3.75 15.35c0-3.55 2.88-6.43 6.43-6.43.33 0 .66.02.99.08v3.55c-.32-.12-.66-.18-.99-.18-1.6 0-2.9 1.3-2.9 2.9s1.3 2.9 2.9 2.9 2.9-1.3 2.9-2.9V2h3.53Z"/>
+      </svg>
+    </a>
+
+    <!-- Instagram -->
+    <a class="icon-link" href="https://www.instagram.com/jorune00/" target="_blank" rel="noreferrer" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7.5 2.5h9A5 5 0 0 1 21.5 7.5v9a5 5 0 0 1-5 5h-9a5 5 0 0 1-5-5v-9a5 5 0 0 1 5-5Zm9 2h-9a3 3 0 0 0-3 3v9a3 3 0 0 0 3 3h9a3 3 0 0 0 3-3v-9a3 3 0 0 0-3-3Zm-4.5 3a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5Zm5.2-.9a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1Z"/>
+      </svg>
+    </a>
+
+    <!-- Facebook -->
+    <a class="icon-link" href="https://facebook.com/johnny.heintz" target="_blank" rel="noreferrer" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.87.24-1.46 1.5-1.46h1.6V5c-.28-.04-1.25-.12-2.38-.12-2.36 0-3.97 1.44-3.97 4.09V11H8.5v3h2.8v8h2.2Z"/>
+      </svg>
+    </a>
+
+    <!-- Blog -->
+    <a class="icon-link" href="/blog" aria-label="Blog">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M5 4h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 2v12h14V6H5Zm2 2h10v2H7V8Zm0 4h10v2H7v-2Z"/>
+      </svg>
+    </a>
+  </div>
+  <p class="section-note">(Tap an icon to open the site)</p>
+
+  <h2>Useful links</h2>
   <div class="grid">
-    <div class="card"><h3><a href="https://github.com/jorune00" target="_blank">GitHub</a></h3></div>
-    <div class="card"><h3><a href="https://www.linkedin.com/in/johnnyheintz/" target="_blank">LinkedIn</a></h3></div>
-    <div class="card"><h3><a href="https://twitter.com/jorune00" target="_blank">Twitter/X</a></h3></div>
-    <div class="card"><h3><a href="https://www.tiktok.com/@jorune00" target="_blank">TikTok</a></h3></div>
-    <div class="card"><h3><a href="https://www.instagram.com/jorune00/" target="_blank">Instagram</a></h3></div>
-    <div class="card"><h3><a href="https://facebook.com/johnny.heintz" target="_blank">Facebook</a></h3></div>
-    <div class="card"><h3><a href="https://www.agentmail.to/" target="_blank" rel="noreferrer">AgentMail</a></h3><p>Email for AI agents (backup option if Google blocks us again)</p></div>
-    <div class="card"><h3><a href="/blog">Blog</a></h3></div>
+    <div class="card">
+      <h3><a href="https://www.agentmail.to/" target="_blank" rel="noreferrer">AgentMail</a></h3>
+      <p>Email for AI agents (backup option if Google blocks us again)</p>
+    </div>
   </div>
 </body>
 </html>
